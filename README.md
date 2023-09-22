@@ -1,3 +1,5 @@
+![](https://github.com/zakaria-narjis/Emergent-flocking-with-reinforcement-learning/scatter.gif)
+
 # Emergent Flocking Behaviour using Reinforcement Learning
 
 This is the Python codes related to the following article: Zakaria Narjis
