@@ -1,4 +1,4 @@
-![](https://github.com/zakaria-narjis/Emergent-flocking-with-reinforcement-learning/scatter.gif)
+![](https://github.com/zakaria-narjis/Emergent-flocking-with-reinforcement-learning/blob/main/scatter.gif)
 
 # Emergent Flocking Behaviour using Reinforcement Learning
 
