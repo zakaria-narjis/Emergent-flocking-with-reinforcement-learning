@@ -1,10 +1,18 @@
 # Emergent Flocking with Reinforcement Learning
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19009222.svg)](https://doi.org/10.5281/zenodo.19009222)
+
 Teaching an agent to flock like a bird — without ever being told the rules.
 
 This project trains a **Deep Double DQN (DDQN)** agent to control a single boid (bird-like particle) inside a swarm of regular Reynolds boids. The agent learns, purely from reward signals, to exhibit the same emergent flocking behavior described by Craig Reynolds in 1987: cohesion, separation, alignment, and boundary avoidance.
 
 ![Flocking animation](scatter.gif)
+
+---
+
+## Abstract
+
+Flocking behaviour, a widespread phenomenon in the natural world, represents coordination and collective motion observed among diverse species. Traditional approaches are mostly used to model this behaviour. However, these approaches rely on static flocking rules, limiting their adaptability to dynamic real-world scenarios. The challenge lies in effectively understanding and using this complex behaviour for practical applications. In this study, we present an approach using reinforcement learning to address this challenge. Our aim is to train autonomous agents to replicate flocking behaviour within a continuous 2D environment. The approach involves using a reward function to imitate flocking behaviour with an artificially generated flock. By overcoming these limitations, our study offers a deeper understanding of natural systems and broadens the scope for controlling swarming behaviours in various domains and environments.
 
 ---
 
@@ -23,7 +31,7 @@ The RL agent does **not** have the rules hard-coded. Instead it receives an 11-d
 
 ### Architecture
 
-```
+```text
 config/default.yaml
         │
         ▼
@@ -43,14 +51,14 @@ config/default.yaml
 
 ### State space (11D)
 
-| Component | Dims | Range |
-|-----------|------|-------|
-| Position | 2 | [0, size] |
-| Velocity | 2 | [-1, 1] |
-| Cohesion vector | 2 | [-size, size] |
-| Separation vector | 2 | [-size, size] |
-| Alignment vector | 2 | [-size, size] |
-| Neighbor count | 1 | [0, population] |
+| Component         | Dims | Range            |
+| ----------------- | ---- | ---------------- |
+| Position          | 2    | [0, size]        |
+| Velocity          | 2    | [-1, 1]          |
+| Cohesion vector   | 2    | [-size, size]    |
+| Separation vector | 2    | [-size, size]    |
+| Alignment vector  | 2    | [-size, size]    |
+| Neighbor count    | 1    | [0, population]  |
 
 ### Action space
 
@@ -59,7 +67,7 @@ config/default.yaml
 
 ### Reward
 
-```
+```text
 reward = flocking_error × flocking_error_weight
        + grouping_error × grouping_error_weight
 
@@ -120,7 +128,7 @@ This renders and saves `eval_animation.gif` to the run directory.
 
 All hyperparameters live in `config/default.yaml`. To run a variant, create a new YAML that overrides only the values you want to change, then pass it via `--override-config`.
 
-```
+```text
 config/
 ├── default.yaml                   # Base configuration (all parameters)
 └── experiments/
@@ -130,20 +138,20 @@ config/
 
 **Key config sections:**
 
-| Section | What it controls |
-|---------|-----------------|
-| `simulation` | Space size, boid count, episode length, flocking radii and strengths |
-| `reward` | Flocking error weight, grouping penalty weight |
-| `agent` | DDQN gamma, replay buffer capacity, update intervals |
-| `exploration` | Epsilon-greedy schedule (start, end, decay steps) |
-| `training` | Total steps, evaluation frequency, device (cpu/cuda) |
-| `output` | Experiments directory, optional run name |
+| Section       | What it controls                                              |
+| ------------- | ------------------------------------------------------------- |
+| `simulation`  | Space size, boid count, episode length, flocking radii        |
+| `reward`      | Flocking error weight, grouping penalty weight                |
+| `agent`       | DDQN gamma, replay buffer capacity, update intervals          |
+| `exploration` | Epsilon-greedy schedule (start, end, decay steps)             |
+| `training`    | Total steps, evaluation frequency, device (cpu/cuda)          |
+| `output`      | Experiments directory, optional run name                      |
 
 ---
 
 ## Project structure
 
-```
+```text
 Emergent-flocking-with-reinforcement-learning/
 ├── train.py                      # Training entry point
 ├── evaluate.py                   # Evaluation + animation entry point
@@ -200,7 +208,24 @@ Evaluation scores range from −8090 to −1267 depending on initialization; the
 
 ## Citation
 
+If you use this project, please cite it as:
+
+```bibtex
+@software{narjis_2026_19009222,
+  author       = {Narjis, Zakaria},
+  title        = {Emergent Flocking Behaviour using Reinforcement Learning},
+  month        = mar,
+  year         = 2026,
+  publisher    = {Zenodo},
+  version      = {v1.0.0},
+  doi          = {10.5281/zenodo.19009222},
+  url          = {https://doi.org/10.5281/zenodo.19009222}
+}
 ```
+
+This work builds on the boids model originally described in:
+
+```text
 Reynolds, C. W. (1987). Flocks, herds and schools: A distributed behavioral model.
 ACM SIGGRAPH Computer Graphics, 21(4), 25–34.
 ```

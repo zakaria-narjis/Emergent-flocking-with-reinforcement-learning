@@ -1,0 +1,41 @@
+cff-version: 1.2.0
+title: Emergent Flocking Behaviour using Reinforcement Learning
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Zakaria
+    family-names: Narjis
+    email: zakaria.narjis@uni-luebeck.de
+    orcid: 'https://orcid.org/0009-0007-7033-4419'
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.19009222
+repository-code: >-
+  https://github.com/zakaria-narjis/Emergent-flocking-with-reinforcement-learning
+abstract: >-
+  Flocking behaviour, a widespread phenomenon in the natural world,
+  represents coordination and collective motion observed among diverse
+  species. Traditional approaches are mostly used to model this behaviour.
+  However, these approaches rely on static flocking rules, limiting their
+  adaptability to dynamic real-world scenarios. The challenge lies in
+  effectively understanding and using this complex behaviour for practical
+  applications. In this study, we present an approach using reinforcement
+  learning to address this challenge. Our aim is to train autonomous agents
+  to replicate flocking behaviour within a continuous 2D environment. The
+  approach involves using a reward function to imitate flocking behaviour
+  with an artificially generated flock. By overcoming these limitations,
+  our study offers a deeper understanding of natural systems and broadens
+  the scope for controlling swarming behaviours in various domains and
+  environments.
+keywords:
+  - Reinforcement Learning
+  - Swarm Robotics
+  - Boid
+  - Flocking
+  - Multi-agent Systems
+  - Deep Q-Network
+license: MIT
+version: 1.0.0
+date-released: '2026-03-13'
