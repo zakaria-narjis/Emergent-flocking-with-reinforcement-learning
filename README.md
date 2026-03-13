@@ -2,7 +2,7 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19009222.svg)](https://doi.org/10.5281/zenodo.19009222)
 
-Teaching an agent to flock like a bird — without ever being told the rules.
+Teaching an agent to flock like a bird without ever being told the rules.
 
 This project trains a **Deep Double DQN (DDQN)** agent to control a single boid (bird-like particle) inside a swarm of regular Reynolds boids. The agent learns, purely from reward signals, to exhibit the same emergent flocking behavior described by Craig Reynolds in 1987: cohesion, separation, alignment, and boundary avoidance.
 
