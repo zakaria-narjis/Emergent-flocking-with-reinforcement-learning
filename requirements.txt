@@ -1,0 +1,9 @@
+agentpy
+gymnasium
+pfrl
+torch
+numpy
+pandas
+matplotlib
+PyYAML>=6.0
+pillow

@@ -1,0 +1,12 @@
+# large_population.yaml — larger swarm in a bigger space
+# Usage: python train.py --override-config config/experiments/large_population.yaml
+
+simulation:
+  population: 20
+  size: 80
+
+exploration:
+  decay_steps: 350000
+
+training:
+  total_steps: 700000

@@ -1,0 +1,54 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# default.yaml — single source of truth for all hyperparameters
+# Override individual sections with experiment YAML files passed via
+#   python train.py --override-config config/experiments/fast_debug.yaml
+# ─────────────────────────────────────────────────────────────────────────────
+
+# AgentPy simulation parameters
+simulation:
+  size: 50                    # Space dimensions (50x50 units)
+  ndim: 2                     # Number of spatial dimensions
+  population: 5               # Number of regular (non-learning) boids
+  agents_population: 1        # Number of RL-controlled boids
+  steps: 200                  # Episode length (steps per episode)
+  inner_radius: 3.0           # Separation detection radius
+  outer_radius: 10.0          # Cohesion / alignment detection radius
+  border_distance: 10.0       # Distance from edge at which border rule activates
+  cohesion_strength: 0.005    # Weight for cohesion rule
+  separation_strength: 0.1    # Weight for separation rule
+  alignment_strength: 0.3     # Weight for alignment rule
+  border_strength: 0.5        # Weight for border avoidance rule
+
+# Reward shaping weights
+reward:
+  flocking_error_weight: 10000   # Multiplier for MSE flocking error term
+  grouping_error_weight: 10      # Multiplier for isolation penalty term
+  grouping_penalty_base: 10      # Base penalty added when agent has 0 neighbors
+
+# DDQN / PFRL agent configuration
+agent:
+  gamma: 0.90                    # Discount factor
+  optimizer_eps: 1.0e-2          # Adam epsilon
+  replay_buffer_capacity: 100000 # Max transitions in prioritized replay buffer
+  replay_start_size: 1000        # Steps before training begins
+  update_interval: 100           # Q-network update frequency (steps)
+  target_update_interval: 10000  # Target network sync frequency (steps)
+
+# Epsilon-greedy exploration schedule
+exploration:
+  start_epsilon: 0.9             # Initial exploration rate
+  end_epsilon: 0.01              # Final exploration rate
+  decay_steps: 250000            # Steps over which epsilon decays linearly
+
+# Training run configuration
+training:
+  total_steps: 500000            # Total environment steps
+  eval_n_episodes: 100           # Episodes per evaluation checkpoint
+  eval_interval: 10000           # Evaluate every N steps
+  seed: 42
+  device: cpu                    # "cpu" or "cuda"
+
+# Output paths
+output:
+  experiments_dir: experiments/runs
+  run_name: null                 # null = auto-generate timestamp name

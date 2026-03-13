@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Package install
+*.egg
+pip-wheel-metadata/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Experiment runs (large model files — keep only .gitkeep)
+experiments/runs/*/
+
+# Legacy output directory from original notebook
+result/
+
+# Visualisation outputs
+output.svg
+Training_graph.svg
+
+# OS
+.DS_Store
+Thumbs.db
